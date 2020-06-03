@@ -1,0 +1,45 @@
+什么是CSS，CSS是如何工作的:
+CSS 是用来指定文档如何展示给用户的一门语言——如网页的样式、布局、等等。CSS 用过给文档添加样式来工作。
+
+一份【文档】是由标记语言组织起来的文本文件 —— HTML 是最常见的标记语言, 但你可能也听说过其他可标记语言，如 SVG 或 XML。
+【展示】一份文档给用户实际上是将文档变成用户可用的文件。Browsers：如 Firefox，Chrome, 或 Edge，
+都可以将文档在电脑屏幕、投影仪或打印机等设备上进行可视化。
+
+（浏览器有时候也被称为 user agent，大致可以当这个程序是一个存在于计算机系统中的人。 当我们讨论CSS时，
+浏览器是 User agent 的主要形式， 然而它并不是唯一的一个。还有其他可用的user agents — 像是那些可以把HTML和CSS文档转换为可以打印的PDF文档的软件。）
+
+
+CSS的基本语法是怎样的：
+选择器（selector){
+  属性(property):值(value);
+}
+语法由一个 选择器(selector)起头。 它 选择(selects) 了我们将要用来添加样式的 HTML 元素。 
+接着输入一对大括号{ }。 在大括号内部定义一个或多个形式为 属性(property):值(value); 的 声明(declarations)。每个声明都指定了我们所选择元素的一个属性，
+之后跟一个我们想赋给这个属性的值。
+冒号之前是属性，冒号之后是值。不同的 CSS 属性(properties) 对应不同的合法值。
+
+CSS选择器是什么概念，简单选择器和属性选择器是什么:（除了下面的，还有好几种：https://developer.mozilla.org/zh-CN/docs/Learn/CSS/Building_blocks/Selectors）
+语法由一个 选择器(selector)起头。 它 选择(selects) 了我们将要用来添加样式的 HTML 元素。 元素被选择器所选择的话，就被叫做“选择器的对象”。
+简单选择器，指向某一个或某类HTML元素：类型、类和ID选择器，三者依次举例：h1 { }、 .box { }、 #unique { }
+属性选择器，根据一个元素上的某个标签属性的存否以选择元素的不同方式：a[title] { }；
+或者甚至根据一个有特定值的标签属性是否存在，来做选择：a[href="https://example.com"] { }
+
+文本样式都有哪些相关属性，对应哪些值：
+font-family 设置字体类型 font-family:"隶书";
+font-size 设置字体大小 font-size:12px;
+font-style 设置字体风格 font-style:italic;
+font-weight 设置字体的粗细 font-weight:bold;
+font 设置所有字体属性 font:italic bold 36px "宋体";
+还有很多...
+
+
+
+
+关于规范：
+所有的标准Web技术(HTML, CSS, JavaScript等) 都被定义在一个巨大的文档中，称作 规范specifications (或者简称为 "specs")，它是由 (像是 W3C, WHATWG, ECMA 或 Khronos) 这些规范化组织所发布的，其中还定义了各种技术是如何工作的。
+
+CSS 也不例外 — 它是由W3C(万维网联盟)中的一个名叫 CSS Working Group 团体发展起来的。这个团体是由浏览器厂商和其他公司中对 CSS 感兴趣的人作为代表组成的。也有其他的人员，比如受邀专家(invited experts)，他们作为不从属于任何组织的独立声音加入团体。
+
+新的 CSS 特性被开发出来，或是因为某个浏览器热衷于开发新功能，或是因为Web设计人员与开发者要求增加一个新特性，又或是 CSS Working Group 内部的讨论决定。CSS 始终在发展，并伴随着新的特性。然而，有一件事情从始至终都未改变，那就是不让新的改变破坏旧的网站，即使是2000年建立的网站，如今也能正常访问！
+
+作为一个 CSS 新手，你会发现阅读 CSS 规范 中的内容非常吃力 — 它旨在为工程师在用户代理(user agents)中实现对 CSS 各种特性的支持，而不是作为一本为Web开发者理解 CSS 内容的教程。即使是有经验的开发者，也更倾向于使用 MDN 文档或者其它教程。但是，知晓它的存在，理解 CSS、规范 和 浏览器支持（见下文） 之间的关系是很有价值的。
