@@ -20,7 +20,7 @@ CSS的基本语法是怎样的：
 
 CSS选择器是什么概念，简单选择器和属性选择器是什么:（除了下面的，还有好几种：https://developer.mozilla.org/zh-CN/docs/Learn/CSS/Building_blocks/Selectors）
 语法由一个 选择器(selector)起头。 它 选择(selects) 了我们将要用来添加样式的 HTML 元素。 元素被选择器所选择的话，就被叫做“选择器的对象”。
-简单选择器，指向某一个或某类HTML元素：类型、类和ID选择器，三者依次举例：h1 { }、 .box { }、 #unique { }
+简单选择器，指向某一个或某类HTML元素：类型、类和ID选择器、全局选择器，四者依次举例：h1 { }、 .box { }、 #unique { }、* { }
 属性选择器，根据一个元素上的某个标签属性的存否以选择元素的不同方式：a[title] { }；
 或者甚至根据一个有特定值的标签属性是否存在，来做选择：a[href="https://example.com"] { }
 
