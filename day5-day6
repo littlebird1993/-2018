@@ -1,0 +1,58 @@
+掌握 CSS 盒模型及通过Float进行简单的布局
+
+盒模型的概念:
+在 CSS 中，所有的元素都被一个个的“盒子（box）”包围着，理解这些“盒子”的基本原理，是我们使用CSS实现准确布局、处理元素排列的关键。
+完整的 CSS 盒模型应用于块级盒子，内联盒子只使用盒模型中定义的部分内容。模型定义了盒的每个部分 —— margin, border, padding, and content
+CSS中组成一个块级盒子需要:
+·Content box: 这个区域是用来显示内容，大小可以通过设置 width 和 height.
+·Padding box: 包围在内容区域外部的空白区域； 大小通过 padding 相关属性设置。
+·Border box: 边框盒包裹内容和内边距。大小通过 border 相关属性设置。
+·Margin box: 这是最外面的区域，是盒子和其他元素之间的空白区域。大小通过 margin 相关属性设置。
+在标准模型中，如果你给盒设置 width 和 height，实际设置的是 content box。 padding 和 border 再加上设置的宽高一起决定整个盒子的大小。 
+（MDN的介绍有不妥的地方，盒子和盒模型的关系有点暧昧，不知道算不算同一个东西。当说计算盒子的大小时，不把Margin部分算上去；
+可是上面介绍块级盒子时，又说Margin是盒子的一部分。我暂时就当作，它们是一个东西，只是计算盒子大小时不把Margin算上。）
+而替代盒模型改变了计算盒子大小的方式，具体看：https://developer.mozilla.org/zh-CN/docs/Learn/CSS/Building_blocks/The_box_model
+
+在 CSS 中我们广泛地使用两种“盒子” —— 块级盒子 (block box) 和 内联盒子 (inline box)。
+外部显示类型：我们通过对盒子display 属性的设置，比如 inline 或者 block ，来控制盒子的外部显示类型。
+内部显示类型：同样盒模型还有内部显示类型，它决定了盒子内部元素是如何布局的。默认情况下是按照 正常文档流 布局，也意味着它们和其他块元素以及内联元素一样
+（正常文档流 ：https://developer.mozilla.org/zh-CN/docs/Learn/CSS/CSS_layout/Normal_Flow）
+
+
+
+inline、block和inline-block的概念:
+块级盒子 (block box) 和 内联盒子 (inline box)，这两种盒子会在页面流（page flow）和元素之间的关系方面表现出不同的行为:
+
+一个被定义成块级的（block）盒子会表现出以下行为:
+·盒子会在内联的方向上扩展并占据父容器在该方向上的所有可用空间，在绝大数情况下意味着盒子会和父容器一样宽
+·每个盒子都会换行
+·width 和 height 属性可以发挥作用
+·内边距（padding）, 外边距（margin） 和 边框（border） 会将其他元素从当前盒子周围“推开”
+除非特殊指定，诸如标题(<h1>等)和段落(<p>)默认情况下都是块级的盒子。
+
+如果一个盒子对外显示为 inline，那么他的行为如下:
+·盒子不会产生换行。
+·width 和 height 属性将不起作用。
+·垂直方向的内边距、外边距以及边框会被应用但是不会把其他处于 inline 状态的盒子推开。
+·水平方向的内边距、外边距以及边框会被应用而且也会把其他处于 inline 状态的盒子推开。
+用做链接的 <a> 元素、 <span>、 <em> 以及 <strong> 都是默认处于 inline 状态的。
+
+
+内外边距，宽度，高度，box-sizing等属性:
+前三者看最上面，具体参考：https://developer.mozilla.org/zh-CN/docs/Learn/CSS/Building_blocks/The_box_model
+box-sizing就是改变盒模型的类型。默认浏览器会使用标准模型。如果需要使用替代模型，您可以通过为其设置 box-sizing: border-box 来实现。 这样就可以告诉浏览器使用 border-box 来定义区域，从而设定您想要的大小。
+替代盒模型的width和height就直接是盒子的宽和高。
+
+
+
+浮动，清除浮动:
+https://developer.mozilla.org/zh-CN/docs/Learn/CSS/CSS_layout/Floats
+
+如何使用浮动进行布局
+
+
+
+
+补充：
+CSS之px、em、rem三者的联系与区别
+https://baijiahao.baidu.com/s?id=1606146424842978662&wfr=spider&for=pc
